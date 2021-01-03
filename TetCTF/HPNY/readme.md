@@ -29,7 +29,7 @@ else
 
 ?>
 ```
-exploit : readfile(next(array_reverse(scandir(__DIR__))))._
+exploit : `readfile(next(array_reverse(scandir(__DIR__))))._`
 
 FLAG : 
 ```php
