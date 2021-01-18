@@ -1,0 +1,9 @@
+file Jasper.jpg            
+
+Jasper.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, Exif Standard: [TIFF image data, big-endian, direntries=9, manufacturer=Jasper Phone, model=Jasper 101, resolutionunit=2, software=Photoshop], progressive, precision 8, 3384x2259, components 3
+
+exiftool Jasper.jpg
+
+Lens Serial Number              : cybergrabs{Y0U_4re_g00d_4t_m3ta_DaT4}
+
+# cybergrabs{Y0U_4re_g00d_4t_m3ta_DaT4}

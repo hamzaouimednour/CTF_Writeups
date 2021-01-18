@@ -1,0 +1,8 @@
+
+value=6d2c4f667040764e4d525a2e602e4953312c51684e2829476225597374454f6f692c2a614d28247b5123692e3a6d4b73
+
+# Hint : My Base Gonna Make You Crazy xD
+
+# value = base91(hex(flag))
+
+# cybergrabs{v3ryyy_3asy_f0r_y0u_i_gu3ss}
