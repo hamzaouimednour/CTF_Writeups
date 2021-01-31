@@ -1,0 +1,10 @@
+# basically file name is flag.txt
+
+pr flag.{r..y}{r..y}{r..y}
+nl flag.{r..y}{r..y}{r..y}
+
+pr flag.[r-y][r-y][r-y]
+nl flag.[r-y][r-y][r-y]
+
+
+# flag{w3ll_th1s_f1l3_sh0uldnt_h4v3_fl4g_1n_2738372131}
