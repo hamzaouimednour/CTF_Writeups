@@ -1,0 +1,34 @@
+.evtx file : Log file contains a list of events recorded by Windows;
+
+
+`./evtx_dump -o json Security.evtx > dump.json`
+`./evtx_dump -o json Security.evtx|grep CommandLine > cli_dump.json`
+
+found this : 
+
+`powershell -encodedcommand SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAALQBVAHIAaQAgAGgAdAB0AHAAcwA6AC8ALwBkAG8AYwBzAC4AZwBvAG8AZwBsAGUALgBjAG8AbQAvAGQAbwBjAHUAbQBlAG4AdAAvAGQALwAxADEASABTAHoAVAB5ADQAcgByAEsAdwBwAHkAVQBwAE8ANgBWAHQAQgBVAFUARwB1ADkAVQA1AEcALQBHAHoATQBFADIATABrAC0ARgBwAFcAbwBCAFkALwBlAGQAaQB0AA==`
+
+try to execute it :
+
+C:\Users\Dragunov>powershell -encodedcommand SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAALQBVAHI
+AaQAgAGgAdAB0AHAAcwA6AC8ALwBkAG8AYwBzAC4AZwBvAG8AZwBsAGUALgBjAG8AbQAvAGQAbwBjAHUAbQBlAG4AdAAvAGQALwA
+xADEASABTAHoAVAB5ADQAcgByAEsAdwBwAHkAVQBwAE8ANgBWAHQAQgBVAFUARwB1ADkAVQA1AEcALQBHAHoATQBFADIATABrAC0
+ARgBwAFcAbwBCAFkALwBlAGQAaQB0AA==
+
+	The term 'Invoke-WebRequest' is not recognized as the name of a cmdlet, function, script file, or o
+	perable program. Check the spelling of the name, or if a path was included, verify that the path is
+	 correct and try again.
+	At line:1 char:18
+	+ Invoke-WebRequest <<<<  -Uri https://docs.google.com/document/d/11HSzTy4rrKwpyUpO6VtBUUGu9U5G-GzM
+	E2Lk-FpWoBY/edit
+	    + CategoryInfo          : ObjectNotFound: (Invoke-WebRequest:String) [], CommandNotFoundExcept
+	   ion
+	    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+got this URL : https://docs.google.com/document/d/11HSzTy4rrKwpyUpO6VtBUUGu9U5G-GzM
+E2Lk-FpWoBY/edit
+
+
+# flag{y0u_g07_m3_682346}

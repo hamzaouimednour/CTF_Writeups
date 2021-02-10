@@ -1,0 +1,15 @@
+We are creating InfoSec blog to upload our recent work , if you faced any issues don't hesitate to inform us .
+
+
+Level: medium
+
+
+<!--Hint: /home -->
+
+
+assert(): 
+
+assert("file_exists('$file')"): "file_exists('pages/index.php')" 
+assert("strpos('$file', '..') === false"): "strpos('pages/..php', '..') === false" 
+
+/var/www/html/index.php
