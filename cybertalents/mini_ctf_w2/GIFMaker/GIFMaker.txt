@@ -1,0 +1,10 @@
+HINT : flag is in /home/flag
+
+chall about uploading (mp4, avi, m3u8) and converting it to GIF, after a  while google still our friend found this :
+
+https://www.blackhat.com/docs/us-16/materials/us-16-Ermishkin-Viral-Video-Exploiting-Ssrf-In-Video-Converters.pdf
+https://github.com/TFNS/writeups/tree/master/2020-07-31-InCTF/video
+
+exploiting ...
+
+# FLAG{ConGratZ_mAkE_yOuRsElF_sOmE_cOfFe_aND_eNjOY}
