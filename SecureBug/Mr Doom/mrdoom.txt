@@ -1,0 +1,18 @@
+writeup by HackToPu$:
+
+##Name: Mr Dooom
+##Level: Easy
+##subject: DOM based XSS
+##Description: Hi i am Mr Doom , message me with two secret letters.
+##Flag: FLAG{th!5_!5_my_l0ng_Fl4g_F0r_5w33t_D0M!!}
+
+###solution:
+1. by checking the page HTML source , you will find a clue to the secret letters 
+ <!--------------------------------------------
+        letter1 : alert('flag1')
+        letter2 : alert('flag2')
+    ---------------------------------------------->
+2. that means you need to make two alerts , one for flag1 and two for flag2 .
+3. by reading the Javascript source you will find that there are two message functions , each one has a different flow of interacting with the input you send.
+4. to get the first flag , you need to bypass the filteration of the input , by sending  '#';alert('flag1')//
+5. and you can get the second flag by sending Comment#><svg onload=alert('flag2')
