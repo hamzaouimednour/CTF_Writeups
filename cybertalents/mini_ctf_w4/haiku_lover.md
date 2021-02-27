@@ -5,7 +5,6 @@ code before fixing :
 ```python
 from flask import Flask, request, render_template
 from os import getcwd
-from os import path
 app  = Flask(__name__, template_folder='templates')
 
 @app.route('/', methods=['GET'])
@@ -31,7 +30,7 @@ code after fixing by adding `and '..' not in request.args.get('haiku')`:
 ```python
 from flask import Flask, request, render_template
 from os import getcwd
-from os import path
+#from os import path
 app  = Flask(__name__, template_folder='templates')
 
 @app.route('/', methods=['GET'])
