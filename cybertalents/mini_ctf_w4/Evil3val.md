@@ -14,7 +14,9 @@ if(isset($cmd)){
 ```
 
 1- to bypass `space` and `parentheses` filter we need to use functions that does not require parentheses (i.e: print, include, require ...)
+
 2- to bypass `flag` filter we need to add second argument, as we can see `$` and `_` chars are allowed for `$_GET, $_REQUEST` use. (in all cases we need a dollar sign to declare that we end our func name and we are reading data from a var)
+
 3- to bypass `semicolon` filter we gonna need the php close tag `?>` to end the script.
 
 payload :
