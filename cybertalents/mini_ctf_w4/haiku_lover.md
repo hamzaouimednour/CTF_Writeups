@@ -1,4 +1,4 @@
-Secure Coding : fix the vulnerability, by reading the code we found that it reads file from an argument so i thought about LFI.
+Secure Coding : fix the vulnerability, by reading the code we found that it reads file from an argument so i thought about LFI, Path Traversal.
 
 code before fixing :
 
@@ -23,7 +23,7 @@ def main():
 		return render_template('index.html')
 ```
 
-with some googling i tried this statment `path.commonprefix((path.realpath(getcwd()+'/haikus/'+str(haiku)),getcwd()+'/haikus/')) == getcwd()+'/haikus/'` it works as well on local but gives error on chall platform (i dm'ed the admin after solving that told him about this )
+with some googling i tried this statment `os.path.commonprefix((os.path.realpath(getcwd()+'/haikus/'+str(haiku)),getcwd()+'/haikus/')) == getcwd()+'/haikus/'` it works as well on local but gives error on chall platform (i dm'ed the admin after solving that told him about this )
 
 code after fixing by adding `and '..' not in request.args.get('haiku')`:
 
