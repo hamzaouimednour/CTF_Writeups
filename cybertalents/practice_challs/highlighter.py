@@ -14,7 +14,6 @@ system(): gives error 'Code contains php code , php codes is forbidden'
 $[a-z] : empty
 eval() : wroking
 
-the chall using php so we can say it's an 'echo',
 all we have to do is inject a small $_GET inside two backtick operators to execute some commands;
 (https://www.php.net/manual/en/language.operators.execution.php)
 
